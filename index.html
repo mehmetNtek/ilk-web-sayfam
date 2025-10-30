@@ -23,21 +23,28 @@
                 max-width: 300px; /* Çok büyük olmasını engelle demek */
             }
         }
+
+        .ascii-sanat{
+            font-family: monospace;
+            font-size: 14;
+            white-space: pre;
+        }
+
     </style>
 
     <title>Mehmet N. TEK</title> <!-- bu komut içeriğimizin browserda gözüken başlığıdır -->
 
 </head>
 
-<body> <!-- bu etiketin altına görsel içeriğimizi oluştururuz -->
+<body id="ust"> <!-- bu etiketin altına görsel içeriğimizi oluştururuz -->
     <div id="ana-kapsayici" style="border: 3px solid #6f0000; padding: 15px; margin-bottom: 20px; background-color: #c8fffc;"> <!-- <div> etiketi sayfanın içeriğini mantıksal olarak gruplamak ve stil uygulamak amacıyla bölümlere ayıran genel amaçlı bir html etiketidir. burada style özelliği yardımıyla stil(CSS) özellikleri ekledik; "border: 1px solid #ff0000;" ile div'in etrafındaki çerçevede 1 piksel kalınlığında kırmızı bir çizgi oluşturdum, "padding: 15px;" ile div ile içerik arasında 15 piksel boşluk ayırdım, "margin-bottom: 20px;" ile div'in altına gelecek içerik ile arasına 20 piksel koymasını sağladım ve "background-color: #6264eb;" ile de div'in arkaplanını renklendirdim -->
-    <h1 style="text-align: center;">Mehmet N. TEK</h1> <!-- bu etiket içeriğimizin ana başlığıdır ve <h2>, <h3> ... <h6> başlığına kadar sırasıyla gider. b tagı kalınlaştırma için kullanılır. b etiketini h1 etiketi içine yazınca başlık ekstra kalın olmuyormuş :DDDD-->
+    <h1 style="text-align: center;" id="ust">Mehmet N. TEK</h1> <!-- bu etiket içeriğimizin ana başlığıdır ve <h2>, <h3> ... <h6> başlığına kadar sırasıyla gider. b tagı kalınlaştırma için kullanılır. b etiketini h1 etiketi içine yazınca başlık ekstra kalın olmuyormuş :DDDD-->
     <h6 style="text-align: right;">Tarih: Ekim 2025</h6> <!-- <h6> aslında sonuncu başlık etiketidir ancak fontundan ve boyutundan dolayı tarih belirtmek için kullanmayı uygun gördüm. -->
     <!-- <hr>  etiketi ise içeriğimizde düz yatay bir çizgi oluşturur ve onun sayesinde farklı bir bölüme geçildiğini anlarız -->
-
+     <br> <!-- br etiketi ile bir satır boşlık bırakıp atlamış oldum -->
         <div id="hakkimda" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fbff; margin-bottom: 10px;">
     <h2 style="text-align: center;">Hakkımda:</h2> <!-- ikinci başlık etiketidir -->
-    <p>Merhaba ben Mehmet, 20 yaşındayım. Bu sene, yani üniversitedeki ilk senemde okulu bıraktım. <a href="https://academy.patika.dev/dashboard" target="_blank">Patika.dev</a> üzerinden <a href="https://www.kodluyoruz.org/" target="_blank">Kodluyoruz</a> ekibinin oluşturduğu <a href="https://academy.patika.dev/paths/baslangic-seviye-frontend-web-development-patikasi" target="_blank">Frontend Web Dev-101</a> eğitimi, kendi projelerim, yapay zeka yardımı(<a href="https://gemini.google.com/?hl=tr" target="_blank">Gemini</a>, <a href="https://chatgpt.com/" target="_blank">ChatGPT</a> vb.) ve kendi araştırmalarım ile web developer olmaya çalışıyorum ve bu benim ilk web sayfam. Şimdilik iyi gittiğim kanaatindeyim.</p>
+    <p>Merhaba ben Mehmet, 20 yaşındayım. Bu sene, yani üniversitedeki ilk senemde okulu bıraktım. <a href="https://academy.patika.dev/dashboard" target="_blank" style="text-decoration: none;">Patika.dev</a> üzerinden <a href="https://www.kodluyoruz.org/" target="_blank" style="text-decoration: none;">Kodluyoruz</a> ekibinin oluşturduğu <a href="https://academy.patika.dev/paths/baslangic-seviye-frontend-web-development-patikasi" target="_blank" style="text-decoration: none;">Frontend Web Dev-101</a> eğitimi, kendi projelerim, yapay zeka yardımı(<a href="https://gemini.google.com/?hl=tr" target="_blank" style="text-decoration: none;">Gemini</a>, <a href="https://chatgpt.com/" target="_blank" style="text-decoration: none;">ChatGPT</a> vb.) ve kendi araştırmalarım ile web developer olmaya çalışıyorum ve bu benim github yardımıyla yayınladığım ilk web sayfam. Şimdilik iyi gittiğim kanaatindeyim.</p>
     <!-- burada <p> etiketini paragraf için kullanırız.
         <a> etiketini link bırakmak için kullanırız.
             <a> etiketinin içerisindeki href="" özelliği eklemek istediğimiz linki girdiğimiz bölümdür, target="_blank" özelliği ise tıkladığımız linki sayfamızın üzerine açmak yerine farklı bir sekmede açılmasını sağlar. -->
@@ -48,8 +55,8 @@
     </div>
 
     <div>
-    <a target="_blank" href="https://www.google.com/search?q=manhattan&tbm=isch">
-    <img class="resim-hizala" border="1" src="images/manhattan.jpeg" alt="manhattan" title="Manhattan"> </a>
+    <a target="_blank" href="https://www.google.com/search?q=New York City&tbm=isch">
+    <img class="resim-hizala" border="1" src="images/nyc.jpeg" alt="New York City" title="New York City"></a>
 
     <a target="_blank" href="https://www.google.com/search?q=los+angeles&tbm=isch">
     <picture>
@@ -64,9 +71,48 @@
     </div>
     <!-- img ile görsel ekleriz; src="" içine göselin adresini gireriz, alt="" içine görselin açıklamasını ekleriz. Eğer float kullanırsak ve bir sonraki elementin görselimizin üstünde değil de yeni bir satırda başlatmak istersek <div style="clear: both;"></div> özelliğini kullanabiliriz ve örneğin float kullanırsak ve belli durumlarda iptal etmek istersek "float: none;" özelliğini kullanabiliriz. title"" özelliği ile resme başlık ekleriz border="1" ile resimlerin etrafına 1 piksellik sınır koydum. map ve area etiketlerinin sunduğu özellikler ve paintten koordinatları bulup chicago görselinin üstünde bir yıldız alanını link alanı yapmaya çalıştım ama olmadı sağlık olsun. -->
 
+    
+    <br>
+<p class="ascii-sanat">
+▬▬▬.◙.▬▬▬
+═▂▄▄▓▄▄▂
+◢◤ █▀▀████▄▄▄◢◤
+█▄ █ █▄ ███▀▀▀▀▀▀╬
+◥█████◤
+══╩══╩═
+   ╬═╬
+   ╬═╬
+   ╬═╬    sadece web geliştirmeyi
+   ╬═╬    öğrenmeye başladığımı
+   ╬═╬    söylemeye geldim
+   ╬═╬\☻
+   ╬═╬ ▌)
+   ╬═╬/)
+</p>
+
+    <br>
+<br>
+<br>
+<br>
+<p>bu kalp sitemin tek dış ziyaretçisi olan sevgili elam için</p>
+<p class="ascii-sanat">
+⠀⠀⠀⠀⣀⡤⢤⣄⠀⣠⡤⣤⡀⠀⠀⠀
+⠀ ⢀⣴⢫⠞⠛⠾⠺⠟⠛⢦⢻⣆⠀⠀
+⠀⠀⣼⢇⣻⠀⠀  ⠀⠀⠀⢸⡇⢿⣆⠀
+⠀⢸⣯⢦⣽⣷⣄  ⠀⣴⣿⣳⣬⣿⠀
+⢠⡞⢩⣿⠋⠙⠳⣽⢾⣯⠛⠙⢹⣯⠘⣷
+⠈⠛⠃⠀⠀⠀⠀⠀⠀⠀  ⠀⠀  ⠙⠋⠁
+</p>
+
+    <br>
+
     <div id="commit-guncellemesi" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fbff;">
     <h3 style="text-align: center;">Üçüncü '7. commit' deneme güncellemesi</h3>
     <p>Bu web sayfanın bilgisayarımdaki dosyasının klasörünü değiştirdim. Bu sebeple bunu gite bildirmek için commit işlemi yapmaya çalıştım. Ancak dosyanın konumu değiştiği için git benim kim olduğumu çözemedi ve kendimi tanıtmam gerekti. Ondan sonra yine commit işlemi yapmayı denedim ancak yine olmadı çünkü 'git init' dediğimde aslında farklı bir local repository oluşturuyormuşum. Bu yüzden gemini'ye başvurdum ve ilk önce remote repository'deki asıl canlı depo dosyasını şu anki konuma pull(çekmem) etmem gerektiğini anladım. Bunu yaptıktan sonra da şu an bu güncellemeyi hem kafama daha iyi kazınsın diye hem de commit için malzeme çıksın diye yaptım.</p>
+    </div>
+    <br>
+    <div id="iletisimicin" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fffb; margin-bottom: 15px;">
+        <ul><li><p>İletişim bilgilerim için buraya tıklayabilirsiniz: <a target="_blank" href="iletisim.html" style="text-decoration: none;">İletişim bilgilerim</a></p></li></ul>
     </div>
     </div>
 </body>
