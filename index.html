@@ -14,7 +14,8 @@
         margin-top: 20px; margin-bottom: 20px;
         margin-left: 20px; margin-right: 20px;
         width: 400px;
-        } /* burada img formatında resim-hizala adında bir class oluşturduk. Style etiketi ile görseli şekillendiririz; "float: right;" ile görseli sağ tarafa alırız mesela, "margin-left: 20px;" ile görseli sol taraftaki elemanla arasına 20 piksel koymasını sağladım mesela, width: 400px ile görselin boyutunu ayarladım. */
+        /* burada img formatında resim-hizala adında bir class oluşturduk. Style etiketi ile görseli şekillendiririz; "float: right;" ile görseli sağ tarafa alırız mesela, "margin-left: 20px;" ile görseli sol taraftaki elemanla arasına 20 piksel koymasını sağladım mesela, width: 400px ile görselin boyutunu ayarladım. */
+        }
         @media (max-width: 768px) { /* Ekran genişliği 768px ve 768px'den azsa */
             img.resim-hizala {
                 display: block; /* görselimizin bir blok gibi davranıp tek başına bir satırı kaplamasını sağlar */
@@ -26,10 +27,56 @@
 
         .ascii-sanat{
             font-family: monospace;
-            font-size: 14;
-            white-space: pre;
+            font-size: 16;
+            white-space: pre; /* satır aralarını atlayıp yazdığımız şeyin olduğu gibi çıkmasını sağlar *\
+            /* Bu iki kural ile p bloğunu ortalarız */
+            width: 200px; /* Veya içeriğin genişliği kadar */ 
+            margin: 0 auto;
         }
 
+        #yukari-cik-btn {
+        /* 1. SABİTLEME */
+        position: fixed; 
+    
+        /* 2. KONUMLANDIRMA */
+        top: 20px; 
+        left: 50%;
+        transform: translate(-50%);
+    
+        /* 3. STİLLEME (Görünürlük ve Tasarım) */
+        background-color: #668fba; /* Mavi arka plan */
+        color: white;           /* Beyaz yazı */
+        border: 1px solid #6f0000;
+        box-shadow: 0 2px 0 0 #000000; /* Butonun altında duran gölge */
+        /* Geçiş (transition) ekleyerek basma animasyonunu yumuşatır */
+        transition: all 0.1s ease;
+        padding: 10px 15px;
+        text-decoration: none; /* a etiketi olduğu için alt çizgiyi kaldırır */
+        border-radius: 8px;     /* Köşeleri yuvarlar */
+        z-index: 9999;          /* Diğer öğelerin üzerinde görünmesini sağlar */
+        cursor: pointer;  
+        }
+
+        yukari-cik-btn:active {
+        /* Buton basıldığında aşağıya kaydır (gölgeli alanın içine girmesi için) */
+        transform: translate(-7%, -50%) translateY(5px); 
+    
+        /* Gölgeyi kaldır ki, buton zemine yapışmış gibi görünsün */
+        box-shadow: none;
+        }
+        
+        html {
+        scroll-behavior: smooth;
+        }
+
+        #yukari-cik-btn {
+         /* Diğer stilleriniz (position: fixed, bottom, right vb.) */
+        /* Başlangıçta butonu görünmez yapın */
+        opacity: 0; 
+        visibility: hidden;
+        /* Yumuşak görünürlük geçişi için */
+        transition: opacity 0.5s, visibility 0.5s; 
+        }
     </style>
 
     <title>Mehmet N. TEK</title> <!-- bu komut içeriğimizin browserda gözüken başlığıdır -->
@@ -37,7 +84,7 @@
 </head>
 
 <body id="ust"> <!-- bu etiketin altına görsel içeriğimizi oluştururuz -->
-    <div id="ana-kapsayici" style="border: 3px solid #6f0000; padding: 15px; margin-bottom: 20px; background-color: #c8fffc;"> <!-- <div> etiketi sayfanın içeriğini mantıksal olarak gruplamak ve stil uygulamak amacıyla bölümlere ayıran genel amaçlı bir html etiketidir. burada style özelliği yardımıyla stil(CSS) özellikleri ekledik; "border: 1px solid #ff0000;" ile div'in etrafındaki çerçevede 1 piksel kalınlığında kırmızı bir çizgi oluşturdum, "padding: 15px;" ile div ile içerik arasında 15 piksel boşluk ayırdım, "margin-bottom: 20px;" ile div'in altına gelecek içerik ile arasına 20 piksel koymasını sağladım ve "background-color: #6264eb;" ile de div'in arkaplanını renklendirdim -->
+    <div id="ana-kapsayici" style="border: 2px solid #6f0000; padding: 15px; margin-bottom: 20px; background-color: #c8fffc;"> <!-- <div> etiketi sayfanın içeriğini mantıksal olarak gruplamak ve stil uygulamak amacıyla bölümlere ayıran genel amaçlı bir html etiketidir. burada style özelliği yardımıyla stil(CSS) özellikleri ekledik; "border: 1px solid #ff0000;" ile div'in etrafındaki çerçevede 1 piksel kalınlığında kırmızı bir çizgi oluşturdum, "padding: 15px;" ile div ile içerik arasında 15 piksel boşluk ayırdım, "margin-bottom: 20px;" ile div'in altına gelecek içerik ile arasına 20 piksel koymasını sağladım ve "background-color: #6264eb;" ile de div'in arkaplanını renklendirdim -->
     <h1 style="text-align: center;" id="ust">Mehmet N. TEK</h1> <!-- bu etiket içeriğimizin ana başlığıdır ve <h2>, <h3> ... <h6> başlığına kadar sırasıyla gider. b tagı kalınlaştırma için kullanılır. b etiketini h1 etiketi içine yazınca başlık ekstra kalın olmuyormuş :DDDD-->
     <h6 style="text-align: right;">Tarih: Ekim 2025</h6> <!-- <h6> aslında sonuncu başlık etiketidir ancak fontundan ve boyutundan dolayı tarih belirtmek için kullanmayı uygun gördüm. -->
     <!-- <hr>  etiketi ise içeriğimizde düz yatay bir çizgi oluşturur ve onun sayesinde farklı bir bölüme geçildiğini anlarız -->
@@ -55,22 +102,26 @@
     </div>
 
     <div>
-    <a target="_blank" href="https://www.google.com/search?q=New York City&tbm=isch">
-    <img class="resim-hizala" border="1" src="images/nyc.jpeg" alt="New York City" title="New York City"></a>
+    <img class="resim-hizala" border="1" src="images/nyc.jpeg" alt="New York City" title="New York City" usemap="#nyc">
+    <map name="nyc">
+        <area shape="default" href="https://www.google.com/search?q=New York City&tbm=isch" alt="nyc_map" title="New York City" target="_blank">
+    </map>
 
-    <a target="_blank" href="https://www.google.com/search?q=los+angeles&tbm=isch">
     <picture>
-    <source class="resim-hizala" media="(min-width: 768px)" border="1" srcset="images/losAngeles.jpeg" alt="losAngeles" title="Los Angeles">
-    <img class="resim-hizala" border="1" src="images/losAngeles2.jpeg" alt="losAngeles" title="Los Angeles"></picture></a>
+        <source class="resim-hizala" media="(min-width: 768px)" border="1" srcset="images/losAngeles.jpeg" alt="losAngeles1">
+            <img class="resim-hizala" border="1" src="images/losAngeles2.jpeg" alt="losAngeles2" usemap="#losAngeles">
+    </picture>
+    <map name="losAngeles">
+        <area shape="default" href="https://www.google.com/search?q=los+angeles&tbm=isch" alt="losAngeles_map" title="Los Angeles" target="_blank">
+    </map>
 
     <img class="resim-hizala" border="1" src="images/chicago.jpeg" alt="chicago" usemap="#chicago">
     <map name="chicago">
-        <area shape="default" href="https://www.google.com/search?q=chicago&tbm=isch" alt="chicago_photos" title="Chicago" target="_blank">
+        <area shape="default" href="https://www.google.com/search?q=chicago&tbm=isch" alt="chicago_map" title="Chicago" target="_blank">
     </map>
-    <div style="clear: both;"></div>
-    </div>
+    <div style="clear: both;"></div> 
     <!-- img ile görsel ekleriz; src="" içine göselin adresini gireriz, alt="" içine görselin açıklamasını ekleriz. Eğer float kullanırsak ve bir sonraki elementin görselimizin üstünde değil de yeni bir satırda başlatmak istersek <div style="clear: both;"></div> özelliğini kullanabiliriz ve örneğin float kullanırsak ve belli durumlarda iptal etmek istersek "float: none;" özelliğini kullanabiliriz. title"" özelliği ile resme başlık ekleriz border="1" ile resimlerin etrafına 1 piksellik sınır koydum. map ve area etiketlerinin sunduğu özellikler ve paintten koordinatları bulup chicago görselinin üstünde bir yıldız alanını link alanı yapmaya çalıştım ama olmadı sağlık olsun. -->
-
+    </div>
     
     <br>
 <p class="ascii-sanat">
@@ -82,20 +133,19 @@
 ══╩══╩═
    ╬═╬
    ╬═╬
-   ╬═╬    sadece web geliştirmeyi
-   ╬═╬    öğrenmeye başladığımı
-   ╬═╬    söylemeye geldim
+   ╬═╬   sadece web geliştirmeyi
+   ╬═╬   öğrenmeye başladığımı
+   ╬═╬   söylemeye geldim
    ╬═╬\☻
    ╬═╬ ▌)
    ╬═╬/)
 </p>
 
-    <br>
 <br>
 <br>
 <br>
-<p>bu kalpler sitemin tek dış ziyaretçisi olan sevgili elam için</p>
-<p class="ascii-sanat">
+<p style="text-align: center;">bu kalpler sitemin tek dış ziyaretçisi olan sevgili elam için</p>
+<p class="ascii-sanat" style="width: 300px;">
 ⠀⠀⢀⣤⣶⣾⢿⡿⣷⣶⣤⡀⠀⠀⠀⠀  ⣠⣶⢾⡿⡟⠙⣶⣦⣄⠀⠀
 ⠀⣴⣿⡟⣾⢽⣻⣽⢯⡿⣽⣿⢧⡀⠀⣰⡿⣯⣟⣯⠟⠁⠠⡹⢿⣾⣷⡀
 ⣼⡿⣾⢽⣹⣞⣷⢿⣯⣟⣷⣻⣿⢷⣼⢿⡽⣷⣧⣤⣀⠀⢀⢤⣦⣴⣿⢷
@@ -119,6 +169,7 @@
 ⠀⠈⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠙⠋⠁
 </p>
     <br>
+    <br>
 
     <div id="commit-guncellemesi" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fbff;">
     <h3 style="text-align: center;">Üçüncü '7. commit' deneme güncellemesi</h3>
@@ -128,14 +179,28 @@
     <div id="iletisimicin" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fffb; margin-bottom: 15px;">
         <ul><li><p>İletişim bilgilerim için buraya tıklayabilirsiniz: <a target="_blank" href="iletisim.html" style="text-decoration: none;">İletişim bilgilerim</a></p></li></ul>
     </div>
-    <br>
-    <br>
-    <br>
-    <div id="sitesifresi">
-        <p>
-            lidnemalokusapukerafkılkaluk
-        </p>
+
+    <div>
+    <a href="#ust" id="yukari-cik-btn">Yukarı Çık⠀↑</a>
     </div>
+
     </div>
+    <script>
+        const yukariCikBtn = document.getElementById('yukari-cik-btn');
+        const esikDegeri = 600; // Butonun görünmesi için 200 piksel aşağı kaydırma eşiği
+
+        window.onscroll = function() {
+            // Kullanıcının ne kadar aşağı kaydırdığını kontrol et
+            if (document.body.scrollTop > esikDegeri || document.documentElement.scrollTop > esikDegeri) {
+            // Eşik aşıldıysa butonu göster
+            yukariCikBtn.style.opacity = "0.8";
+            yukariCikBtn.style.visibility = "visible";
+            } else {
+            // Eşiğin altındaysa butonu gizle (sayfanın başındaysa)
+            yukariCikBtn.style.opacity = "0";
+            yukariCikBtn.style.visibility = "hidden";
+            }
+        };
+    </script>
 </body>
 </html>
