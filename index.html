@@ -22,7 +22,8 @@
 
         .ana-kapsayici {
         background-color: transparent;
-        padding: 20px 40x; margin-bottom: 30px;
+        padding: 20px 40px;
+        margin-bottom: 30px;
         border: none;
         /* Modern/Minimalist Yöntem: Hafif bir gölge ile derinlik katma */
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), /* Yumuşak ana gölge */
@@ -37,15 +38,11 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
                         0 2px 4px -2px rgba(0, 0, 0, 0.06);
             border-radius: 8px;
-
         }
         
         img.resim-hizala {
-            float: center;
-        margin-top: 20px; margin-bottom: 20px;
-        margin-left: 20px; margin-right: 20px;
+        margin: 20px;
         width: 400px;
-        /* burada img formatında resim-hizala adında bir class oluşturduk. Style etiketi ile görseli şekillendiririz; "float: right;" ile görseli sağ tarafa alırız mesela, "margin-left: 20px;" ile görseli sol taraftaki elemanla arasına 20 piksel koymasını sağladım mesela, width: 400px ile görselin boyutunu ayarladım. */
         }
         @media (max-width: 768px) { /* Ekran genişliği 768px ve 768px'den azsa */
             img.resim-hizala {
@@ -68,16 +65,14 @@
         #yukari-cik-btn {
         /* 1. SABİTLEME */
         position: fixed; 
-    
         /* 2. KONUMLANDIRMA */
         top: 20px; 
         left: 50%;
-        transform: translate(-50%);
-    
+        transform: translateX(-50%);
         /* 3. STİLLEME (Görünürlük ve Tasarım) */
         background-color: #668fba; /* Mavi arka plan */
         color: white;           /* Beyaz yazı */
-        border: 1px solid #6f0000;
+        border: none;
         box-shadow: 0 2px 0 0 #000000; /* Butonun altında duran gölge */
         /* Geçiş (transition) ekleyerek basma animasyonunu yumuşatır */
         transition: all 0.1s ease;
@@ -86,27 +81,23 @@
         border-radius: 8px;     /* Köşeleri yuvarlar */
         z-index: 9999;          /* Diğer öğelerin üzerinde görünmesini sağlar */
         cursor: pointer;  
+        /* Diğer stilleriniz (position: fixed, bottom, right vb.) */
+        /* Başlangıçta butonu görünmez yapın */
+        opacity: 0; 
+        visibility: hidden;
+        /* Yumuşak görünürlük geçişi için */
+        transition: opacity 0.5s, visibility 0.5s; 
         }
 
-        yukari-cik-btn:active {
+        #yukari-cik-btn:active {
         /* Buton basıldığında aşağıya kaydır (gölgeli alanın içine girmesi için) */
-        transform: translate(-7%, -50%) translateY(5px); 
-    
+        transform: translateX(-50%) translateY(2px);
         /* Gölgeyi kaldır ki, buton zemine yapışmış gibi görünsün */
         box-shadow: none;
         }
         
         html {
         scroll-behavior: smooth;
-        }
-
-        #yukari-cik-btn {
-         /* Diğer stilleriniz (position: fixed, bottom, right vb.) */
-        /* Başlangıçta butonu görünmez yapın */
-        opacity: 0; 
-        visibility: hidden;
-        /* Yumuşak görünürlük geçişi için */
-        transition: opacity 0.5s, visibility 0.5s; 
         }
     </style>
 
@@ -134,7 +125,7 @@
         <h5 style="text-align: center; ">Amerikanın en gelişmiş birkaç şehri hakkında görsellere erişmek için aşağıdaki görsellere tıklayabilirsiniz.</h5>
     </div>
 
-    <div>
+    <div style="text-align: center;">
     <img class="resim-hizala" border="1" src="images/nyc.jpeg" alt="New York City" title="New York City" usemap="#nyc">
     <map name="nyc">
         <area shape="default" href="https://www.google.com/search?q=New York City&tbm=isch" alt="nyc_map" title="New York City" target="_blank">
