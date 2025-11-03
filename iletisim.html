@@ -4,24 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mehmet N. Tek İletişim Bilgileri</title>
+
+    <style>
+        .ana-kapsayici {
+        background-color: transparent;
+        padding: 20px 40x; margin-bottom: 30px;
+        border: none;
+        /* Modern/Minimalist Yöntem: Hafif bir gölge ile derinlik katma */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), /* Yumuşak ana gölge */
+                    0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Ekstra derinlik */
+        border-radius: 8px; /* Köşeleri hafifçe yuvarlayarak modern görünüm katın */
+        }
+        .yan-kapsayicilar {
+            background-color: white;
+            padding: 30px; margin-bottom: 40px;
+            border: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                        0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-    <div id="iletisim-kapsayicisi" style="border: 2px solid #24a15c; padding: 15px; background-color: #72a995;">
+    <div id="iletisim-kapsayicisi" class="ana-kapsayici">
     <h2 style="text-align: center;">İletişim Bilgilerim</h2>
-    <br>
+
+    <div class="yan-kapsayicilar">
     <ul>
         <li>Benimle e-mail üzerinden iletişime geçmek için ******@gmail.com adresine ulaşabilirsiniz.</li>
         <br>
         <li>Benimle cep telefonu üzerinden iletişime geçmek için +905********* numarısına ulaşabilirsiniz.</li>
     </ul>
-    <br>
-    <br>
-    <div id="sosyalmedya" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fffb; margin-bottom: 15px;">
+    </div>
+
+    <div id="sosyalmedya" class="yan-kapsayicilar">
         <ul><li><p>Sosyal medya hesaplarıma bu sayfadan erişebilirsiniz: <a target="_blank" href="sosyalmedya.html" style="text-decoration: none;">Sosyal Medya Hesaplarım</a></p></li></ul>
     </div>
-    <br>
-    <br>
-    <div id="anasayfaicin" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fffb; margin-bottom: 15px;">
+    
+    <div id="anasayfaicin" class="yan-kapsayicilar">
         <ul><li><p><a target="_blank" href="index.html" style="text-decoration: none;">Ana sayfaya dönmek için buraya tıklayabilirsiniz.</a></p></li></ul>
     </div>
     </div>

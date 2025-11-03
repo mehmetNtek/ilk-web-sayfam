@@ -9,6 +9,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- bu komut içeriğimizi daha farklı boyutlardaki dijital ekranlar için(telefon, tablet vs.) uygun hale getirir -->
 
     <style>
+        
+        body {
+        background-color: #f7f7f7; /* Hafif kirli beyaz/açık gri */
+        /* Sistem yazı tiplerinden güvenilir birini seçin */
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        /* Metin rengini koyu siyah yerine yumuşak koyu gri yapın */
+        color: #333; 
+        /* Satır aralığını açın */
+        line-height: 1.6;
+        }
+
+        .ana-kapsayici {
+        background-color: transparent;
+        padding: 20px 40x; margin-bottom: 30px;
+        border: none;
+        /* Modern/Minimalist Yöntem: Hafif bir gölge ile derinlik katma */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), /* Yumuşak ana gölge */
+                    0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Ekstra derinlik */
+        border-radius: 8px; /* Köşeleri hafifçe yuvarlayarak modern görünüm katın */
+        }
+
+        .yan-kapsayicilar {
+            background-color: white;
+            padding: 30px; margin-bottom: 40px;
+            border: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                        0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+
+        }
+        
         img.resim-hizala {
             float: center;
         margin-top: 20px; margin-bottom: 20px;
@@ -84,20 +115,22 @@
 </head>
 
 <body id="ust"> <!-- bu etiketin altına görsel içeriğimizi oluştururuz -->
-    <div id="ana-kapsayici" style="border: 2px solid #6f0000; padding: 15px; margin-bottom: 20px; background-color: #c8fffc;"> <!-- <div> etiketi sayfanın içeriğini mantıksal olarak gruplamak ve stil uygulamak amacıyla bölümlere ayıran genel amaçlı bir html etiketidir. burada style özelliği yardımıyla stil(CSS) özellikleri ekledik; "border: 1px solid #ff0000;" ile div'in etrafındaki çerçevede 1 piksel kalınlığında kırmızı bir çizgi oluşturdum, "padding: 15px;" ile div ile içerik arasında 15 piksel boşluk ayırdım, "margin-bottom: 20px;" ile div'in altına gelecek içerik ile arasına 20 piksel koymasını sağladım ve "background-color: #6264eb;" ile de div'in arkaplanını renklendirdim -->
+    <div id="ana-kapsayici" class="ana-kapsayici"> <!-- <div> etiketi sayfanın içeriğini mantıksal olarak gruplamak ve stil uygulamak amacıyla bölümlere ayıran genel amaçlı bir html etiketidir. burada style özelliği yardımıyla stil(CSS) özellikleri ekledik; "border: 1px solid #ff0000;" ile div'in etrafındaki çerçevede 1 piksel kalınlığında kırmızı bir çizgi oluşturdum, "padding: 15px;" ile div ile içerik arasında 15 piksel boşluk ayırdım, "margin-bottom: 20px;" ile div'in altına gelecek içerik ile arasına 20 piksel koymasını sağladım ve "background-color: #6264eb;" ile de div'in arkaplanını renklendirdim -->
+    <br>
     <h1 style="text-align: center;" id="ust">Mehmet N. TEK</h1> <!-- bu etiket içeriğimizin ana başlığıdır ve <h2>, <h3> ... <h6> başlığına kadar sırasıyla gider. b tagı kalınlaştırma için kullanılır. b etiketini h1 etiketi içine yazınca başlık ekstra kalın olmuyormuş :DDDD-->
+    <br> <!-- br etiketi ile bir satır boşlık bırakıp atlamış oldum -->
     <h6 style="text-align: right;">Tarih: Ekim 2025</h6> <!-- <h6> aslında sonuncu başlık etiketidir ancak fontundan ve boyutundan dolayı tarih belirtmek için kullanmayı uygun gördüm. -->
     <!-- <hr>  etiketi ise içeriğimizde düz yatay bir çizgi oluşturur ve onun sayesinde farklı bir bölüme geçildiğini anlarız -->
-     <br> <!-- br etiketi ile bir satır boşlık bırakıp atlamış oldum -->
-        <div id="hakkimda" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fbff; margin-bottom: 10px;">
+    
+        <div id="hakkimda" class="yan-kapsayicilar">
     <h2 style="text-align: center;">Hakkımda:</h2> <!-- ikinci başlık etiketidir -->
-    <p>Merhaba ben Mehmet, 20 yaşındayım. Bu sene, yani üniversitedeki ilk senemde okulu bıraktım. <a href="https://academy.patika.dev/dashboard" target="_blank" style="text-decoration: none;">Patika.dev</a> üzerinden <a href="https://www.kodluyoruz.org/" target="_blank" style="text-decoration: none;">Kodluyoruz</a> ekibinin oluşturduğu <a href="https://academy.patika.dev/paths/baslangic-seviye-frontend-web-development-patikasi" target="_blank" style="text-decoration: none;">Frontend Web Dev-101</a> eğitimi, kendi projelerim, yapay zeka yardımı(<a href="https://gemini.google.com/?hl=tr" target="_blank" style="text-decoration: none;">Gemini</a>, <a href="https://chatgpt.com/" target="_blank" style="text-decoration: none;">ChatGPT</a> vb.) ve kendi araştırmalarım ile web developer olmaya çalışıyorum ve bu benim github yardımıyla yayınladığım ilk web sayfam. Şimdilik iyi gittiğim kanaatindeyim.</p>
+    <p>Merhaba ben Mehmet, 20 yaşındayım. Bu sene, yani üniversitedeki ilk senemde okulu bıraktım. <a href="https://academy.patika.dev/dashboard" target="_blank" style="text-decoration: none;">Patika.dev</a> üzerinden <a href="https://www.kodluyoruz.org/" target="_blank" style="text-decoration: none;">Kodluyoruz</a> ekibinin oluşturduğu <a href="https://academy.patika.dev/paths/baslangic-seviye-frontend-web-development-patikasi" target="_blank" style="text-decoration: none;">Frontend Web Dev-101</a> eğitimi, kendi projelerim, yapay zeka yardımı(<a href="https://gemini.google.com/?hl=tr" target="_blank" style="text-decoration: none;">Gemini</a>, <a href="https://chatgpt.com/" target="_blank" style="text-decoration: none;">ChatGPT</a> vb.) ve kendi araştırmalarım ile web developer olmaya çalışıyorum ve bu benim github yardımıyla yayınladığım ilk web sayfam. <br> Şimdilik iyi gittiğim kanaatindeyim.</p>
     <!-- burada <p> etiketini paragraf için kullanırız.
         <a> etiketini link bırakmak için kullanırız.
             <a> etiketinin içerisindeki href="" özelliği eklemek istediğimiz linki girdiğimiz bölümdür, target="_blank" özelliği ise tıkladığımız linki sayfamızın üzerine açmak yerine farklı bir sekmede açılmasını sağlar. -->
     </div>
 
-    <div id="usacities" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fbff;">
+    <div id="usacities" class="yan-kapsayicilar">
         <h5 style="text-align: center; ">Amerikanın en gelişmiş birkaç şehri hakkında görsellere erişmek için aşağıdaki görsellere tıklayabilirsiniz.</h5>
     </div>
 
@@ -122,9 +155,9 @@
     <div style="clear: both;"></div> 
     <!-- img ile görsel ekleriz; src="" içine göselin adresini gireriz, alt="" içine görselin açıklamasını ekleriz. Eğer float kullanırsak ve bir sonraki elementin görselimizin üstünde değil de yeni bir satırda başlatmak istersek <div style="clear: both;"></div> özelliğini kullanabiliriz ve örneğin float kullanırsak ve belli durumlarda iptal etmek istersek "float: none;" özelliğini kullanabiliriz. title"" özelliği ile resme başlık ekleriz border="1" ile resimlerin etrafına 1 piksellik sınır koydum. map ve area etiketlerinin sunduğu özellikler ve paintten koordinatları bulup chicago görselinin üstünde bir yıldız alanını link alanı yapmaya çalıştım ama olmadı sağlık olsun. -->
     </div>
-    
-    <br>
-<p class="ascii-sanat">
+
+    <div>
+    <p class="ascii-sanat">
 ▬▬▬.◙.▬▬▬
 ═▂▄▄▓▄▄▂
 ◢◤ █▀▀████▄▄▄◢◤
@@ -139,13 +172,10 @@
    ╬═╬\☻
    ╬═╬ ▌)
    ╬═╬/)
-</p>
-
-<br>
-<br>
-<br>
-<p style="text-align: center;">bu kalpler sitemin tek dış ziyaretçisi olan sevgili elam için</p>
-<p class="ascii-sanat" style="width: 300px;">
+    </p>
+    <br>
+    <p style="text-align: center;">bu kalpler sitemin tek dış ziyaretçisi olan sevgili elam için</p>
+    <p class="ascii-sanat" style="width: 300px;">
 ⠀⠀⢀⣤⣶⣾⢿⡿⣷⣶⣤⡀⠀⠀⠀⠀  ⣠⣶⢾⡿⡟⠙⣶⣦⣄⠀⠀
 ⠀⣴⣿⡟⣾⢽⣻⣽⢯⡿⣽⣿⢧⡀⠀⣰⡿⣯⣟⣯⠟⠁⠠⡹⢿⣾⣷⡀
 ⣼⡿⣾⢽⣹⣞⣷⢿⣯⣟⣷⣻⣿⢷⣼⢿⡽⣷⣧⣤⣀⠀⢀⢤⣦⣴⣿⢷
@@ -159,24 +189,23 @@
 ⠀⠀⠀⠀⠀⠀⠀⠈⢣⢨⣿⢯⣟⣷⢯⡷⣿⡽⣾⡿⠋⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀    ⠻⢯⣟⡾⣿⡽⣷⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⡳⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</p>
-<p class="ascii-sanat">
+    </p>
+    <p class="ascii-sanat">
 ⠀⠀⠀⠀⣀⡤⢤⣄⠀⣠⡤⣤⡀⠀⠀⠀
 ⠀  ⣴⢫⠞⠛⠾⠺⠟⠛⢦⢻⣆⠀⠀
 ⠀⠀⣼⢇⣻ ⠀⠀⠀⠀⠀ ⢸⡇⢿⣆⠀
 ⠀⢸⣯⢦⣽⣷⣄⡀⠀⢀⣴⣿⣳⣬⣿⠀
 ⢠⡞⢩⣿⠋⠙⠳⣽⢾⣯⠛⠙⢹⣯⠘⣷
 ⠀⠈⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠙⠋⠁
-</p>
-    <br>
-    <br>
+    </p>
+    </div>
 
-    <div id="commit-guncellemesi" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fbff;">
+    <div id="commit-guncellemesi" class="yan-kapsayicilar">
     <h3 style="text-align: center;">Üçüncü '7. commit' deneme güncellemesi</h3>
     <p>Bu web sayfanın bilgisayarımdaki dosyasının klasörünü değiştirdim. Bu sebeple bunu gite bildirmek için commit işlemi yapmaya çalıştım. Ancak dosyanın konumu değiştiği için git benim kim olduğumu çözemedi ve kendimi tanıtmam gerekti. Ondan sonra yine commit işlemi yapmayı denedim ancak yine olmadı çünkü 'git init' dediğimde aslında farklı bir local repository oluşturuyormuşum. Bu yüzden gemini'ye başvurdum ve ilk önce remote repository'deki asıl canlı depo dosyasını şu anki konuma pull(çekmem) etmem gerektiğini anladım. Bunu yaptıktan sonra da şu an bu güncellemeyi hem kafama daha iyi kazınsın diye hem de commit için malzeme çıksın diye yaptım.</p>
     </div>
-    <br>
-    <div id="iletisimicin" style="border: 1px solid #6f0000; padding: 7px; background-color: #d3fffb; margin-bottom: 15px;">
+    
+    <div id="iletisimicin" class="yan-kapsayicilar">
         <ul><li><p>İletişim bilgilerim için buraya tıklayabilirsiniz: <a target="_blank" href="iletisim.html" style="text-decoration: none;">İletişim Bilgilerim</a></p></li></ul>
     </div>
 
